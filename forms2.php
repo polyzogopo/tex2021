@@ -370,6 +370,216 @@ var d=idelement;
    
    
 }
+	
+	
+function put(n)
+{
+d++;
+
+	switch(n)
+	{
+		case 1:
+		
+		    e="<tr><td valign=top><span id=lb"+d+" '>Label</span></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="TextLabel: <input type=text id=tlabel"+d+" onchange='chng(1, "+d+");'><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"1\",\"name\":\"lb"+d+"\",\"text\":\"Label\"},");
+		break;
+		
+		case 2:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Name</span><br><input type=text></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Name' onchange='chng(2, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(2, "+d+");' id=treq"+d+"><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"2\",\"name\":\"txt"+d+"\",\"fieldname\":\"Name\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		
+		case 21:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Email</span><br><input type=text></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Email' onchange='chng(21, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(21, "+d+");' id=treq"+d+"><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"2\",\"name\":\"temail"+d+"\",\"fieldname\":\"Email\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		
+		case 3:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Name</span><br><textarea cols=30 rows=3></textarea></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName:<input type=text id=ttxta_name"+d+" value='Name' onchange='chng(3, "+d+");'><br>";
+			e+="Cols:<input type=text id=ttxta_cols"+d+" value=20 onchange='chng(3, "+d+");'><br>";
+			e+="Rows:<input type=text id=ttxta_rows"+d+" value=3 onchange='chng(3, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(3, "+d+");' id=treq"+d+"><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"3\",\"name\":\"txtarea"+d+"\",\"fieldname\":\"Name\",\"rows\":\"3\",\"cols\":\"30\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		
+		case 4:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Select</span><br><select id=sel"+d+"></select></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Select' onchange='chng(4, "+d+");'><br>";
+			e+="Options(use , between them): <input type=text id=toption"+d+" value='' onchange='chng(4, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(4, "+d+");' id=treq"+d+"><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"4\",\"name\":\"tselect"+d+"\",\"fieldname\":\"Select\",\"Required\":\"0\", \"Options\":\"\"},");
+		
+		
+		 
+		break;
+	
+		
+	   		case 5:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Map</span><br><div style='width:100%; height:200px;' id=map"+d+">";
+			e+="<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50135.89130282601!2d21.74735306010182!3d38.24486577815511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sel!2sgr!4v1413496109206\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\"></iframe>";
+			e+="</div></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Map' onchange='chng(5, "+d+");'><br>";
+			e+="Zoom: <input type=text id=tzoom"+d+" value='14' onchange='chng(5, "+d+");'><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"5\",\"name\":\"tmap"+d+"\",\"fieldname\":\"Map\",\"Zoom\":\"14\"},");
+		
+		
+		 
+		break;
+		
+		
+	   		case 51:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Distance</span><br><div style='width:100%; height:200px;' id=map"+d+">";
+			e+="<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50135.89130282601!2d21.74735306010182!3d38.24486577815511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sel!2sgr!4v1413496109206\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\"></iframe>";
+			e+="</div></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Distance' onchange='chng(51, "+d+");'><br>";
+			e+="Zoom: <input type=text id=tzoom"+d+" value='14' onchange='chng(51, "+d+");'><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"51\",\"name\":\"tdist"+d+"\",\"fieldname\":\"Distance\",\"Zoom\":\"14\"},");
+		
+		
+		 
+		break;
+			
+	   		case 6:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Photo File</span><br> <input type='file' accept='image/*' capture='camera'></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Photo File' onchange='chng(6, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(6, "+d+");' id=treq"+d+"><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"6\",\"name\":\"timage"+d+"\",\"fieldname\":\"Photo File\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		
+			
+	   		case 7:
+		    e="<tr><td valign=top><span id=txt"+d+" '>Audio File</span><br> <input type='file' accept='audio/*' capture></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Audio File' onchange='chng(7, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(7, "+d+");' id=treq"+d+"><br>";	
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"7\",\"name\":\"taudio"+d+"\",\"fieldname\":\"Audio File\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		case 8:
+		    e="<tr><td valign=top><span id=txt"+d+" '>X-Y-Z Device</span><br> <input type='text' ><button>Get Measure</button></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='X-Y-Z Device' onchange='chng(8, "+d+");'><br>";
+			e+="Required: <input type=checkbox onchange='chng(8, "+d+");' id=treq"+d+"><br>";	
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"8\",\"name\":\"txyz"+d+"\",\"fieldname\":\"X-Y-Z Device\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+		case 9:
+		    e="<tr><td valign=top><span id=txt"+d+">Follow Path</span><button>Get Measures</button><br><div style='width:100%; height:200px;' id=map"+d+">";
+			e+="<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50135.89130282601!2d21.74735306010182!3d38.24486577815511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sel!2sgr!4v1413496109206\" width=\"100%\" height=\"200\" frameborder=\"0\" style=\"border:0\"></iframe>";
+			e+="</div></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='Follow Path' onchange='chng(9, "+d+");'><br>";
+			e+="TimeStep Measure(ms): <input type=number value=2000 onchange='chng(9, "+d+");' id=ttmst"+d+"><br>";	
+			e+="Zoom: <input type=text id=tzoom"+d+" value='14' onchange='chng(9, "+d+");'><br>";
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"9\",\"name\":\"tfpath"+d+"\",\"fieldname\":\"Follow \",\"timestep\":\"2000\",\"Zoom\":\"14\"},");
+		
+		
+		 
+		break;
+		case 92:
+		    e="<tr><td valign=top><span id=txt"+d+">All Moves</span><br> <textarea cols=30 rows=5></textarea><button>Get Moves</button></td>";
+			e+="<td valign=top><button onclick='show("+d+");'>Edit</button><button onclick='del("+d+");'>Delete</button></td>";
+			e+="<td valign=top><div id=dv"+d+" style='display:none; border: 1px solid; background:#aaccaa;'>Properties<br>";
+			e+="FieldName: <input type=text id=ttxt"+d+" value='All Moves' onchange='chng(92, "+d+");'><br>";
+			e+="TimeStep Measure(ms): <input type=number value=2000 onchange='chng(92, "+d+");' id=ttmst"+d+"><br>";	
+			e+="Required: <input type=checkbox onchange='chng(92, "+d+");' id=treq"+d+"><br>";	
+			e+="</div></td></tr>";
+		
+		    frm.push(e);
+		    js.push("{\"type\":\"92\",\"name\":\"txyz2"+d+"\",\"fieldname\":\"All Moves\",\"timestep\":\"2000\",\"Required\":\"0\"},");
+		
+		
+		 
+		break;
+	}
+    jsv="";
+	s="<h2>My Form</h2><table width=700px>";
+	for (i=0;i<frm.length;i++)
+	{
+	 s+=frm[i];
+	 jsv+=js[i];
+	}
+	jsv+="{\"type\":\"10\",\"name\":\"sbm\"}";
+	s+="</table>";
+
+	
+document.getElementById('fm').innerHTML=s;    
+document.getElementById('v1').value=jsv;
+}
 
 
 
